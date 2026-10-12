@@ -3,14 +3,12 @@
 @theme {
   --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
 
-  /* Baryable ti kolor */
   --color-primary: #06b6d4;
   --color-secondary: #6366f1;
   --color-accent: #22d3ee;
   --color-dark-bg: #020617;
   --color-card-bg: #0f172a;
 
-  /* Baryable ti gradient */
   --color-gradient-brand: linear-gradient(to right, var(--color-primary), var(--color-secondary));
   --color-gradient-subtle: linear-gradient(to right, rgba(6, 182, 212, 0.2), rgba(99, 102, 241, 0.2));
 }
@@ -20,7 +18,6 @@ body {
   background-color: var(--color-dark-bg);
 }
 
-/* Dagiti klase a mangaramat kadagiti baryable */
 @utility text-brand-gradient {
   background-image: var(--color-gradient-brand);
   -webkit-background-clip: text;

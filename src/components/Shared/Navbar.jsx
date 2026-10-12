@@ -57,11 +57,11 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 shadow-xl shadow-cyan-950/10"
-            : "bg-slate-950/60 backdrop-blur-sm border-b border-slate-800/40"
-        }`}
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+    scrolled
+      ? "bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 shadow-xl shadow-cyan-950/10"
+      : "bg-slate-950/60 backdrop-blur-sm border-b border-slate-800/40"
+  }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3.5 group">
@@ -111,9 +111,8 @@ export default function Navbar() {
               href="#contact"
               className="bg-brand-gradient inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white shadow-lg shadow-primary/25 hover:shadow-primary/40 active:scale-95 transition-all group"
             >
-              <FiMessageSquare className="w-3.5 h-3.5" />
-              Let&apos;s Talk
-              <FiArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+              <FiMessageSquare className="w-3.5 h-3.5" /> Let&apos;s Talk
+              
             </Link>
           </div>
 

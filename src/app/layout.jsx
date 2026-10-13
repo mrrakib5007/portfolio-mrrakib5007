@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${plusJakartaSans.variable} h-full antialiased`}
     >
-      <body className={`${plusJakartaSans.className} min-h-full flex flex-col antialiased bg-[#020617]`}>
+      <body className={`${plusJakartaSans.className} min-h-full flex flex-col antialiased bg-dark-bg`}>
         <Navbar />
         {children}
       </body>

@@ -3,7 +3,8 @@
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FiMessageSquare, FiMenu, FiX, FiArrowRight } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
+import { IoChatboxEllipsesOutline } from "react-icons/io5";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -111,7 +112,7 @@ export default function Navbar() {
               href="#contact"
               className="bg-brand-gradient inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white shadow-lg shadow-primary/25 hover:shadow-primary/40 active:scale-95 transition-all group"
             >
-              <FiMessageSquare className="w-3.5 h-3.5" /> Let&apos;s Talk
+              <IoChatboxEllipsesOutline className="w-4 h-4" /> Let&apos;s Talk
               
             </Link>
           </div>
@@ -199,7 +200,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="bg-brand-gradient w-full flex items-center justify-center gap-2 py-3 rounded-xl text-white font-semibold text-sm shadow-lg shadow-primary/20 active:scale-95 transition-all"
           >
-            <FiMessageSquare className="w-4 h-4" />
+            <IoChatboxEllipsesOutline className="w-4 h-4" />
             Let&apos;s Talk
           </Link>
         </div>

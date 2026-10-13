@@ -63,8 +63,8 @@ export default function About() {
 
             <div className="pt-2 flex flex-col sm:flex-row items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
               <a
-                href="/resume.pdf"
-                download="Mahabub_Rahman_Rakib_Resume.pdf"
+                href="https://drive.google.com/file/d/1J0J7YQzT2Boyo3RlF_FZRZG8rnscnKHy/view?usp=sharing"
+                target="_blank"                
                 className="bg-brand-gradient w-full sm:w-auto justify-center inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-white font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 active:scale-95 transition-all"
               >
                 <FiDownload className="w-4 h-4" /> 

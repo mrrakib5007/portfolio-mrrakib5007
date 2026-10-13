@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mahabub Rahman Rakib | Developer Portfolio
 
-## Getting Started
+A modern, high-performance, and responsive personal portfolio website built with Next.js (App Router) and Tailwind CSS. Showcases production-ready full-stack projects, core competencies, career history, client testimonials, and interactive contact channels.
 
-First, run the development server:
+## Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Framework:** Next.js (App Router)
+- **UI & Styling:** Tailwind CSS
+- **Slider & Carousels:** Swiper.js
+- **Icons:** React Icons
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Hero & Interactive Introduction:** Dynamic landing section highlighting full-stack engineering expertise, direct CV download, WhatsApp link, and social channels.
+- **Dynamic Projects Showcase & Filtering:** Categorized project filtering (Next.js, Full Stack, Frontend) with custom 16:9 aspect ratio image presentation, line-clamped descriptions, external live previews, and GitHub repository links.
+- **Empty State & Smart Navigation Handling:** Fallback empty states for empty project categories and dynamic view-more actions triggered only when projects exceed display limits.
+- **Interactive Work Experience Timeline:** Responsive vertical career timeline with animated glowing nodes highlighting current roles, remote positions, and core technical contributions.
+- **Client Reviews Carousel:** Interactive one-by-one testimonial carousel powered by Swiper.js, featuring autoplay, smooth touch-navigation, and customized glowing pagination indicators.
+- **Interactive FAQ Accordion:** Pure CSS grid-based smooth expandable accordion handling frequently asked questions regarding development workflow, architecture, and maintenance.
+- **Direct Mailto Contact Gateway:** Functional contact form pre-populating email drafts via mailto protocols, paired with direct communication cards for WhatsApp and email.
+- **Hydration-Safe Architecture:** Built with `useSyncExternalStore` to prevent server/client timestamp mismatches, cascading renders, and unstable date evaluations during prerendering.
+- **Modern Dark Theme Aesthetic:** Optimized dark palette with custom cyan/indigo brand gradients, neon glow accents, and responsive layout scaling across all devices.

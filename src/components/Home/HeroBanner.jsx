@@ -36,7 +36,7 @@ export default function HeroBanner() {
 
             <div className="mt-3 flex items-center justify-center lg:justify-start gap-3">
               <span className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-sky-400 to-indigo-400">
-                Full Stack Developer
+                Full Stack Engineer
               </span>
             </div>
 

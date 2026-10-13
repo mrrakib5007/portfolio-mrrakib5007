@@ -81,8 +81,8 @@ export default function Navbar() {
               <span className="font-extrabold text-lg text-white tracking-tight flex items-center gap-1 leading-tight">
                 Developer <span className="text-primary">Rakib</span>
               </span>
-              <span className="text-[10px] font-mono text-primary/90 tracking-widest font-semibold uppercase">
-                Nextjs specialist
+              <span className="text-[10px] font-mono text-white tracking-widest font-semibold uppercase">
+                Full Stack Engineer
               </span>
             </div>
           </Link>
@@ -155,8 +155,8 @@ export default function Navbar() {
                 <span className="font-bold text-sm text-white">
                   Developer <span className="text-primary">Rakib</span>
                 </span>
-                <span className="text-[9px] font-mono text-primary/90 uppercase">
-                  Nextjs specialist
+                <span className="text-[9px] font-mono text-white uppercase">
+                  Full Stack Engineer
                 </span>
               </div>
             </div>

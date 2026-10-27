@@ -11,7 +11,7 @@ export default function Footer() {
   const currentYear = useSyncExternalStore(
     emptySubscribe,
     () => new Date().getFullYear(),
-    () => 2026
+    () => 2026,
   );
 
   const scrollToTop = () => {
@@ -32,9 +32,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 border-t border-slate-900 pt-16 pb-12 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-slate-900">
-          
           <div className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-1.5 shadow-lg shadow-cyan-500/10">
               <Image
@@ -50,7 +48,7 @@ export default function Footer() {
                 Developer<span className="text-primary">Rakib</span>
               </span>
               <p className="text-xs text-slate-400 font-mono mt-0.5">
-                Full Stack Engineer
+                Full Stack Developer
               </p>
             </div>
           </div>
@@ -102,15 +100,11 @@ export default function Footer() {
               <FiArrowUp className="w-4 h-4" />
             </button>
           </div>
-
         </div>
 
         <div className="pt-8 text-center text-xs text-slate-500">
-          <p>
-            &copy; {currentYear} Mahabub Rahman Rakib. All rights reserved.
-          </p>
+          <p>&copy; {currentYear} Mahabub Rahman Rakib. All rights reserved.</p>
         </div>
-
       </div>
     </footer>
   );

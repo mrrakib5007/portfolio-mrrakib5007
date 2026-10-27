@@ -7,7 +7,7 @@ export default function Experience() {
     {
       period: "2025 - Present",
       status: "Current",
-      role: "Web Developer (MERN)",
+      role: "Full Stack Engineer",
       company: "It Lancer BD",
       location: "Lakshmipur, BD",
       isRemote: false,

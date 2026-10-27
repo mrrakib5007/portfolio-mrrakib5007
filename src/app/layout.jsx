@@ -13,14 +13,14 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata = {
   metadataBase: new URL("https://mrrakib5007.vercel.app"),
   title: {
-    default: "Mahabub Rahman Rakib | Full Stack Engineer",
+    default: "Mahabub Rahman Rakib | Full Stack Developer",
     template: "%s | Mahabub Rahman Rakib",
   },
   description:
     "Portfolio of Mahabub Rahman Rakib - MERN Stack & Next.js Full Stack Web Developer specializing in building modern, scalable, and responsive web applications.",
   keywords: [
     "Mahabub Rahman Rakib",
-    "Full Stack Engineer",
+    "Full Stack Developer",
     "Full Stack Developer",
     "MERN Stack Developer",
     "Next.js Developer",
@@ -32,7 +32,9 @@ export const metadata = {
     "TypeScript",
     "Tailwind CSS",
   ],
-  authors: [{ name: "Mahabub Rahman Rakib", url: "https://mrrakib5007.vercel.app" }],
+  authors: [
+    { name: "Mahabub Rahman Rakib", url: "https://mrrakib5007.vercel.app" },
+  ],
   creator: "Mahabub Rahman Rakib",
   publisher: "Mahabub Rahman Rakib",
   formatDetection: {
@@ -44,7 +46,7 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Mahabub Rahman Rakib | Full Stack Engineer",
+    title: "Mahabub Rahman Rakib | Full Stack Developer",
     description:
       "Explore production-grade full-stack web applications, interactive case studies, and engineering solutions built with Next.js and MERN stack.",
     url: "https://mrrakib5007.vercel.app",

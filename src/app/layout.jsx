@@ -1,12 +1,17 @@
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Shared/Navbar";
 import Footer from "@/components/Shared/Footer";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-plus-jakarta-sans",
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -92,10 +97,12 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} h-full antialiased scroll-smooth`}
+      suppressHydrationWarning
+      className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
     >
       <body
-        className={`${plusJakartaSans.className} min-h-full flex flex-col antialiased bg-dark-bg selection:bg-cyan-500 selection:text-slate-950`}
+        suppressHydrationWarning
+        className={`${inter.className} min-h-full flex flex-col antialiased selection:bg-cyan-500 selection:text-slate-950 font-sans`}
       >
         <Navbar />
         {children}

@@ -21,9 +21,9 @@ export default function Contact() {
     setIsSubmitting(true);
 
     const mailtoUrl = `mailto:mrrakib5007@gmail.com?subject=${encodeURIComponent(
-      formData.subject
+      formData.subject,
     )}&body=${encodeURIComponent(
-      `Name: \${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
     )}`;
 
     window.location.href = mailtoUrl;
@@ -31,39 +31,37 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-slate-900/50 border-t border-slate-800/80 relative">
+    <section id="contact" className="py-20 md:py-28 bg-slate-50/60 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-mono uppercase tracking-wider text-primary font-semibold px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
             Let&apos;s Collaborate
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-4">
             Get In Touch
           </h2>
           <div className="w-16 h-1 bg-brand-gradient mx-auto mt-4 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
           <div className="lg:col-span-5 space-y-6">
-            <h3 className="text-2xl font-bold text-white leading-snug">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-snug">
               Looking for a Personal Web Developer?
             </h3>
-            <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
               Are you on the lookout for someone who can design and manage your website? Or maybe you are looking for someone who can help you with the concept of your Business website design? You got your freelancer! I work personally and friendly.
             </p>
 
             <div className="space-y-4 pt-2">
-              <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800/90 flex items-center gap-4 hover:border-primary/40 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+              <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800/90 flex items-center gap-4 hover:border-primary/40 transition-colors shadow-xs">
+                <div className="w-12 h-12 rounded-xl bg-cyan-50 dark:bg-cyan-500/10 text-primary flex items-center justify-center shrink-0">
                   <FiMapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-mono text-slate-400 uppercase tracking-wider">
+                  <p className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                     Location
                   </p>
-                  <p className="text-sm font-bold text-white">
+                  <p className="text-sm font-bold text-slate-900 dark:text-white">
                     Dhaka, Bangladesh
                   </p>
                 </div>
@@ -71,16 +69,16 @@ export default function Contact() {
 
               <a
                 href="mailto:mrrakib5007@gmail.com"
-                className="p-4 rounded-2xl bg-slate-950 border border-slate-800/90 flex items-center gap-4 hover:border-primary/40 transition-colors group"
+                className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800/90 flex items-center gap-4 hover:border-primary/40 transition-colors group shadow-xs cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-500 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                   <FiMail className="w-5 h-5" />
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-xs font-mono text-slate-400 uppercase tracking-wider">
+                  <p className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                     Email
                   </p>
-                  <p className="text-sm font-bold text-white truncate group-hover:text-primary transition-colors">
+                  <p className="text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-primary transition-colors">
                     mrrakib5007@gmail.com
                   </p>
                 </div>
@@ -90,16 +88,16 @@ export default function Contact() {
                 href="https://wa.me/8801991465007"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-2xl bg-slate-950 border border-slate-800/90 flex items-center gap-4 hover:border-primary/40 transition-colors group"
+                className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800/90 flex items-center gap-4 hover:border-primary/40 transition-colors group shadow-xs cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                   <FiPhone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-mono text-slate-400 uppercase tracking-wider">
+                  <p className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                     Phone / WhatsApp
                   </p>
-                  <p className="text-sm font-bold text-white group-hover:text-primary transition-colors">
+                  <p className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
                     +880 1991-465007
                   </p>
                 </div>
@@ -108,11 +106,11 @@ export default function Contact() {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="p-7 sm:p-9 rounded-3xl bg-slate-950 border border-slate-800/90 shadow-2xl shadow-black/50">
+            <div className="p-7 sm:p-9 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800/90 shadow-sm dark:shadow-2xl dark:shadow-black/50">
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2 font-semibold">
                       Your Name
                     </label>
                     <input
@@ -122,11 +120,11 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-primary transition-colors text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-primary transition-colors text-sm"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2 font-semibold">
                       Your Email
                     </label>
                     <input
@@ -136,13 +134,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-primary transition-colors text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-primary transition-colors text-sm"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2 font-semibold">
                     Subject
                   </label>
                   <input
@@ -152,12 +150,12 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Project Discussion"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-primary transition-colors text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-primary transition-colors text-sm"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-mono text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2 font-semibold">
                     Your Message
                   </label>
                   <textarea
@@ -167,7 +165,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell me about your project, timeline, and requirements..."
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-primary transition-colors text-sm resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-primary transition-colors text-sm resize-none"
                   />
                 </div>
 
@@ -182,9 +180,7 @@ export default function Contact() {
               </form>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );

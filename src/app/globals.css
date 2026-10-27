@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --color-primary: #06b6d4;
   --color-secondary: #6366f1;
@@ -13,9 +16,154 @@
   --color-gradient-subtle: linear-gradient(to right, rgba(6, 182, 212, 0.2), rgba(99, 102, 241, 0.2));
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-dark-bg);
+  background-color: #f8fafc;
+  color: #0f172a;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+html.dark body {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+@layer components {
+  .theme-logo-dark {
+    display: none;
+  }
+  html.dark .theme-logo-light {
+    display: none;
+  }
+  html.dark .theme-logo-dark {
+    display: block;
+  }
+
+  /* Typewriter blinking caret */
+  .typing-caret {
+    display: inline-block;
+    width: 2.5px;
+    height: 1.15em;
+    vertical-align: -0.15em;
+    background: currentColor;
+    animation: typing-caret-blink 0.9s steps(1) infinite;
+  }
+
+  /* Banner Contact Me Button: Gradient border & gradient text on hover */
+  .contact-gradient-btn {
+    position: relative;
+    isolation: isolate;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+    transition: all 0.25s ease;
+  }
+
+  html.dark .contact-gradient-btn {
+    background-color: #0f172a;
+    border-color: #1e293b;
+    color: #e2e8f0;
+  }
+
+  .contact-gradient-btn::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: 1;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #06b6d4, #6366f1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+  }
+
+  .contact-gradient-btn:hover {
+    border-color: transparent !important;
+  }
+
+  .contact-gradient-btn:hover::before {
+    opacity: 1;
+  }
+
+  .contact-gradient-btn:hover .contact-text {
+    background-image: linear-gradient(135deg, #06b6d4, #6366f1) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+  }
+
+  .contact-gradient-btn:hover .contact-icon {
+    color: #06b6d4 !important;
+  }
+
+  /* Featured Projects: Strict 1px border on filter tabs to eliminate layout shifts */
+  .project-tab-button {
+    box-sizing: border-box !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+  }
+
+  /* Client Reviews: Swiper pagination without gray background bar */
+  .custom-review-pagination {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: auto !important;
+    margin-inline: auto !important;
+    padding: 4px !important;
+  }
+
+  .custom-review-pagination .swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 9999px !important;
+    margin: 0 4px !important;
+    opacity: 1 !important;
+    transition: all 0.3s ease !important;
+    background: #cbd5e1 !important;
+    border: 1px solid #94a3b8 !important;
+    cursor: pointer !important;
+  }
+
+  html.dark .custom-review-pagination .swiper-pagination-bullet {
+    background: #334155 !important;
+    border: 1px solid #475569 !important;
+  }
+
+  .custom-review-pagination .swiper-pagination-bullet:hover {
+    background: #94a3b8 !important;
+  }
+
+  html.dark .custom-review-pagination .swiper-pagination-bullet:hover {
+    background: #64748b !important;
+  }
+
+  .custom-review-pagination .swiper-pagination-bullet-active {
+    width: 24px !important;
+    border-radius: 9999px !important;
+    background: #06b6d4 !important;
+    border-color: #06b6d4 !important;
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5) !important;
+  }
+}
+
+@keyframes typing-caret-blink {
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
 }
 
 @utility text-brand-gradient {

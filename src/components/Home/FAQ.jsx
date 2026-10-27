@@ -38,10 +38,10 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-mono uppercase tracking-wider text-primary font-semibold px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+          <span className="text-xs font-mono uppercase tracking-wider text-primary font-semibold px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20">
             Clarity &amp; Workflow
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-4">
             Frequently Asked Questions
           </h2>
           <div className="w-16 h-1 bg-brand-gradient mx-auto mt-4 rounded-full" />
@@ -54,11 +54,11 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className="rounded-2xl bg-slate-900/60 border border-slate-800/90 overflow-hidden transition-all duration-300 hover:border-primary/40"
+                className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/90 overflow-hidden transition-all duration-300 hover:border-primary/40 shadow-xs"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-slate-200 hover:text-white transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-slate-800 hover:text-primary dark:text-slate-200 dark:hover:text-white transition-colors cursor-pointer"
                 >
                   <span className="text-base sm:text-lg">
                     {faq.question}
@@ -77,8 +77,8 @@ export default function FAQ() {
                       : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
-                  <div className="overflow-hidden bg-slate-950/40">
-                    <p className="text-xs sm:text-sm text-slate-300 px-6 pb-6 leading-relaxed">
+                  <div className="overflow-hidden bg-slate-50/70 dark:bg-slate-950/80 border-t border-slate-100 dark:border-slate-800/60">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 px-6 py-5 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>

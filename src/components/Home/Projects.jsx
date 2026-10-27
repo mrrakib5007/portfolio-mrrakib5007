@@ -4,54 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 import { FiLayers, FiFolder } from "react-icons/fi";
 import ProjectCard from "@/components/Cards/ProjectCard";
+import { projects } from "@/data/projects";
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
-
-  const projectList = [
-    {
-  title: "IT Lancer BD (New Version)",
-  categories: ["nextjs", "fullstack"],
-  badge: "IT Resource Platform",
-  image: "/projects/itlancerbd.png",
-  description:
-    "A Bangladesh-focused IT resource platform built with Next.js 16 and React 19. It brings together practical online tools, job and admission opportunities, public-service links, downloadable resources, and productivity utilities for everyday tasks. Features include CV and document tools, photo editing, NID print preparation, bilingual content, and responsive light and dark themes, powered by MongoDB and a custom Node.js and Express.js backend.",
-  tags: [
-    "Next.js 16",
-    "Tailwind CSS",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "JWT",    
-    "SweetAlert2",
-    "next-themes",
-  ],
-  liveUrl: "https://pro.itlancerbd.com",
-  githubUrl: "https://github.com/mrrakib5007/itlancerbd",
-},
-    {
-      title: "Dainik Sangbad (দৈনিক সংবাদ)",
-      categories: ["nextjs", "fullstack"],
-      badge: "News Portal",
-      image: "/projects/dainik-sangbad.png",
-      description:
-        "A modern, fast, and fully responsive Bengali online news portal application built with Next.js (App Router) and Tailwind CSS. Features live weather, real-time prayer timings, category filtering, Better Auth login/signup, and proxy-secured profile routing.",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Better Auth", "SweetAlert2"],
-      liveUrl: "https://dainik-sangbad.vercel.app",
-      githubUrl: "https://github.com/mrrakib5007/dainik-sangbad",
-    },
-    {
-      title: "ABIRA Logistics & Transport Service",
-      categories: ["nextjs", "frontend"],
-      badge: "Supply Chain",
-      image: "/projects/abira-logistics.png",
-      description:
-        "A high-performance freight and supply chain business web platform. Showcases multimodal cargo movement, customs clearance brokerage, warehousing operations, and seamless quote acquisition flows.",
-      tags: ["Next.js", "JavaScript", "Tailwind CSS", "Framer Motion", "Next Themes", "SweetAlert2"],
-      liveUrl: "https://abira-logistics.netlify.app/",
-      githubUrl: "https://github.com/mrrakib5007/abira-logistics",
-    },
-  ];
 
   const categories = [
     { id: "all", label: "All Projects" },
@@ -62,8 +18,8 @@ export default function Projects() {
 
   const filteredProjects =
     activeFilter === "all"
-      ? projectList
-      : projectList.filter((project) =>
+      ? projects
+      : projects.filter((project) =>
           Array.isArray(project.categories)
             ? project.categories.includes(activeFilter)
             : project.category === activeFilter,

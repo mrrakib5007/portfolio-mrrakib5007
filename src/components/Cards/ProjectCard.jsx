@@ -1,7 +1,6 @@
-"use client";
-
 import Image from "next/image";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
+import Link from "next/link";
+import { FiExternalLink, FiGithub, FiArrowRight } from "react-icons/fi";
 
 export default function ProjectCard({ project }) {
   return (
@@ -43,26 +42,37 @@ export default function ProjectCard({ project }) {
             ))}
           </div>
 
-          <div className="grid grid-cols-2 gap-2.5">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-900 dark:hover:bg-slate-850 text-xs font-semibold text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-primary/50 flex items-center justify-center gap-2 transition-all hover:text-primary group/btn shadow-xs cursor-pointer"
+          {/* Action Buttons: View Details (Primary) + Quick Live & Code Links */}
+          <div className="flex flex-col gap-2.5">
+            <Link
+              href={`/projects/${project.id}`}
+              className="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-primary hover:text-white dark:bg-slate-900 dark:hover:bg-primary dark:hover:text-slate-950 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-primary text-xs font-bold flex items-center justify-center gap-2 transition-all duration-200 group/detail shadow-xs cursor-pointer"
             >
-              <FiGithub className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400 group-hover/btn:text-primary transition-colors" />
-              View Code
-            </a>
+              <span>View Details &amp; Case Study</span>
+              <FiArrowRight className="w-3.5 h-3.5 group-hover/detail:translate-x-1 transition-transform" />
+            </Link>
 
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-2.5 px-3 rounded-xl bg-brand-gradient hover:opacity-95 text-xs font-semibold text-white shadow-md shadow-primary/20 flex items-center justify-center gap-1.5 transition-all group/btn cursor-pointer"
-            >
-              <FiExternalLink className="w-3.5 h-3.5 text-white group-hover/btn:scale-110 transition-transform" />
-              Live Preview
-            </a>
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-2 px-3 rounded-xl bg-transparent hover:bg-slate-100 dark:hover:bg-slate-900 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200/80 dark:border-slate-800 flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+              >
+                <FiGithub className="w-3.5 h-3.5" />
+                <span>Client Code</span>
+              </a>
+
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-2 px-3 rounded-xl bg-primary/10 hover:bg-primary/20 text-xs font-semibold text-primary border border-primary/20 flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+              >
+                <FiExternalLink className="w-3.5 h-3.5" />
+                <span>Live Demo</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

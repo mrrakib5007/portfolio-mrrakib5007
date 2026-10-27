@@ -2,11 +2,14 @@
 
 import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import Logo from "@/components/Shared/Logo";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -53,6 +56,13 @@ export default function Navbar() {
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     setActiveSection(targetId);
+    if (isOpen) setIsOpen(false);
+
+    if (pathname !== "/") {
+      router.push(targetId === "home" ? "/" : `/#${targetId}`);
+      return;
+    }
+
     isClickScrolling.current = true;
 
     if (targetId === "home") {
@@ -65,8 +75,6 @@ export default function Navbar() {
         window.scrollTo({ top: y, behavior: "smooth" });
       }
     }
-
-    if (isOpen) setIsOpen(false);
 
     window.setTimeout(() => {
       isClickScrolling.current = false;
@@ -115,7 +123,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Link
-            href="#home"
+            href={pathname === "/" ? "#home" : "/"}
             onClick={(e) => handleNavClick(e, "home")}
             className="flex items-center gap-3.5 group cursor-pointer"
           >

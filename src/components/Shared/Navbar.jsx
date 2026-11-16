@@ -13,29 +13,27 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [isDark, setIsDark] = useState(false);
   const isClickScrolling = useRef(false);
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem("theme");
-    const shouldBeDark = savedTheme === "dark";
-    setIsDark(shouldBeDark);
-    if (shouldBeDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    try {
+      const savedTheme = window.localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else if (savedTheme === "light") {
+        document.documentElement.classList.remove("dark");
+      }
+    } catch {
+      // Ignore storage errors
     }
   }, []);
 
   const toggleTheme = () => {
-    const nextThemeIsDark = !isDark;
-    setIsDark(nextThemeIsDark);
-    if (nextThemeIsDark) {
-      document.documentElement.classList.add("dark");
-      window.localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      window.localStorage.setItem("theme", "light");
+    const isDark = document.documentElement.classList.toggle("dark");
+    try {
+      window.localStorage.setItem("theme", isDark ? "dark" : "light");
+    } catch {
+      // Ignore storage errors
     }
   };
 
@@ -45,8 +43,7 @@ export default function Navbar() {
       { label: "About", href: "#about", id: "about" },
       { label: "Skills", href: "#skills", id: "skills" },
       { label: "Projects", href: "#projects", id: "projects" },
-      { label: "Experience", href: "#experience", id: "experience" },
-      { label: "Reviews", href: "#reviews", id: "reviews" },
+      { label: "Experience", href: "#experience", id: "experience" },      
       { label: "FAQ", href: "#faq", id: "faq" },
       { label: "Contact", href: "#contact", id: "contact" },
     ],
@@ -172,11 +169,12 @@ export default function Navbar() {
               suppressHydrationWarning
               onClick={toggleTheme}
               type="button"
-              aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-              title={isDark ? "Switch to light theme" : "Switch to dark theme"}
+              aria-label="Toggle theme"
+              title="Toggle theme"
               className="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:border-primary/50 flex items-center justify-center transition-colors shadow-xs cursor-pointer"
             >
-              {isDark ? <FiSun className="w-4 h-4 text-amber-400" /> : <FiMoon className="w-4 h-4 text-slate-700" />}
+              <FiSun className="w-4 h-4 text-amber-400 hidden dark:block" />
+              <FiMoon className="w-4 h-4 text-slate-700 block dark:hidden" />
             </button>
             <a
               href="#contact"
@@ -264,11 +262,13 @@ export default function Navbar() {
             suppressHydrationWarning
             onClick={toggleTheme}
             type="button"
-            aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+            aria-label="Toggle theme"
             className="w-full mb-3 flex items-center justify-center gap-2 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors cursor-pointer"
           >
-            {isDark ? <FiSun className="w-4 h-4 text-amber-400" /> : <FiMoon className="w-4 h-4 text-slate-700" />}
-            {isDark ? "Light theme" : "Dark theme"}
+            <FiSun className="w-4 h-4 text-amber-400 hidden dark:block" />
+            <FiMoon className="w-4 h-4 text-slate-700 block dark:hidden" />
+            <span className="hidden dark:inline">Light theme</span>
+            <span className="inline dark:hidden">Dark theme</span>
           </button>
           <a
             href="#contact"

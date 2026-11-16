@@ -1,18 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiGithub, FiMail, FiArrowUp } from "react-icons/fi";
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import Logo from "@/components/Shared/Logo";
 
+const currentYear = 2026;
+
 export default function Footer() {
-  const [currentYear, setCurrentYear] = useState(2025);
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -22,8 +17,7 @@ export default function Footer() {
     { name: "About", href: "/#about" },
     { name: "Skills", href: "/#skills" },
     { name: "Projects", href: "/#projects" },
-    { name: "Experience", href: "/#experience" },
-    { name: "Reviews", href: "/#reviews" },
+    { name: "Experience", href: "/#experience" },    
     { name: "FAQ", href: "/#faq" },
     { name: "Contact", href: "/#contact" },
   ];

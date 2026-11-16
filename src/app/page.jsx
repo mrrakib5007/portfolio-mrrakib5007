@@ -4,7 +4,6 @@ import Experience from "@/components/Home/Experience";
 import FAQ from "@/components/Home/FAQ";
 import HeroBanner from "@/components/Home/HeroBanner";
 import Projects from "@/components/Home/Projects";
-import Reviews from "@/components/Home/Reviews";
 import Skills from "@/components/Home/Skills";
 
 
@@ -15,8 +14,7 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
-      <Experience />
-      <Reviews />
+      <Experience />      
       <FAQ />
       <Contact />
     </div>
